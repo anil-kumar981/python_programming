@@ -54,6 +54,7 @@ print_info(name="Alice", age=30)  # Output: name: Alice age: 30
 square = lambda x: x * x
 print(square(5))  # Output: 25
 
+# Functions can also be defined with both *args and **kwargs to accept variable-length arguments:
 def print_value(*args, **kwargs):
     for arg in args:
         print(arg)
@@ -63,3 +64,4 @@ print_value(1, 2, 3, name="Alice", age=30)
 # Output: 1 2 3 name: Alice age: 30
 print_value(1)  # Output: 1
 print_value(1, name="Alice")  # Output: 1 name: Alice
+
