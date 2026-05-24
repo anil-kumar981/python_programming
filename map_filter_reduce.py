@@ -28,7 +28,9 @@ even_numbers = filter(is_even, numbers)
 print(list(even_numbers))  # Output: [2, 4]
 
 # syntax : reduce(function, iterable)
-# reduce function is used to apply a given function cumulatively to the items of an iterable, from left to right, so as to reduce the iterable to a single value. It is part of the functools module in Python.
+# reduce function is used to apply a given function cumulatively to the items of an iterable, 
+# from left to right, so as to reduce the iterable to a single value. 
+# It is part of the functools module in Python.
 from functools import reduce
 # Example 1: Using reduce to calculate the product of all numbers in a list 
 product = reduce(lambda x, y: x * y, numbers)
