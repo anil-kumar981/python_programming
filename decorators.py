@@ -20,3 +20,31 @@ def add(a, b):
 
 # Example usage
 result = add(5, 3)
+
+# Class Decorator
+# A class decorator is a function that takes a class as an argument and returns a new class that can add some functionality to the original class.
+def class_decorator(cls):
+    class Wrapper:
+        def __init__(self, *args, **kwargs):
+            print(f"Creating an instance of '{cls.__name__}' with arguments: {args} and keyword arguments: {kwargs}")
+            self.wrapped_instance = cls(*args, **kwargs)
+
+        def __getattr__(self, name):
+            print(f"Accessing attribute '{name}' of the wrapped instance")
+            return getattr(self.wrapped_instance, name)
+
+    return Wrapper  
+
+@class_decorator
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def display(self):
+        print(f"Value: {self.value}")
+    def hello(self):
+        print("Hello from MyClass!")
+
+my_instance = MyClass(10)
+my_instance.display()  # Output: Value: 10
+my_instance.hello()  # Output: Hello from MyClass!
