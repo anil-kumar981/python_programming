@@ -19,7 +19,7 @@ async def main():
         long_running_task("Task 1", 2),  # This task will take 2 seconds to complete
         long_running_task("Task 2", 3),  # This task will take 3 seconds to complete
         long_running_task("Task 3", 1),   # This task will take 1 second to complete
-        short_task("Short Task 1"),
+        short_task("Short Task 1"), 
         short_task("Short Task 2")
     ]
 
